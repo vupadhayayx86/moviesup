@@ -49,3 +49,15 @@
     margin-bottom: 2rem;
 }
 
+.username{
+    margin: 10px;
+    font-size: larger;
+    font-weight: 400;
+    color:rgb(19, 148, 191);
+  
+}
+
+.logoutbtn{
+    font-size: larger;
+    font-weight: 400;
+}

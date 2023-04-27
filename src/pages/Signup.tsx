@@ -1,4 +1,9 @@
 import {useForm} from "react-hook-form"
+import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { UserContext } from "../usercontext"
+
+
 
 interface Inputs{
     email:String,
@@ -8,14 +13,32 @@ interface Inputs{
 
 const Signup = () => {
     const {register,handleSubmit,formState:{errors},reset}=useForm<Inputs>()
-    const onSubmit=(data:Inputs)=>{
-        const {password,confirmpass}=data
-        console.log(password,confirmpass)
+    const navigate=useNavigate()
+    const [useremail,setUseremail]=useContext<any>(UserContext)
+    const onSubmit=async (data:Inputs)=>{
+        const {email,password,confirmpass}=data
+        const username=email.slice(0,email.indexOf("@"))
+        
         if(password!==confirmpass){
             alert("Password does not match")
             return
         }
+        try{
+            const res=await fetch("http://localhost:5000/users",{
+                method: 'POST',
+                body: JSON.stringify({email,password,username}),
+                headers: {'Content-type' : 'application/json'},
+                credentials:'include'
+            })
+            const {useremail}=await res.json()
+            setUseremail(useremail)
+            
+        }
+        catch(error){
+            console.log(error)
+        }
         reset()
+        navigate("/")
     }
   return (
     <div className="d-flex justify-content-center">
