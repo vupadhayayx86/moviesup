@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import {useContext} from 'react'
 import {Link} from "react-router-dom"
 import { UserContext } from '../usercontext'
 import { useNavigate } from 'react-router-dom'
@@ -8,13 +8,14 @@ interface Props{
 }
 
 const Navbar = ({jwtToken}:Props) => {
-  const [useremail,setUseremail]=useContext<any>(UserContext)
-  const [cookies, setCookie, removeCookie] = useCookies(['jwtcookie']);
+  const [useremail]=useContext<any>(UserContext)
+  const [cookies,removeCookie] = useCookies(['jwtcookie']);
   const navigate=useNavigate()
   const handleLogout=()=>{
     removeCookie('jwtcookie', { path: '/', domain: 'localhost' });
     navigate("/")
   }
+  console.log(cookies)
   return (
     <>
     <div className="navbar navbar-expand-lg navbar-light bg-light p-3">
