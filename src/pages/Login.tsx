@@ -31,7 +31,7 @@ const Login = () => {
             console.log(error)
         }
         reset()
-        navigate("/")
+        navigate("/home")
     
     }
     

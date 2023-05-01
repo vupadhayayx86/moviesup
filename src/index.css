@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 .navbar-brand{
     font-weight: 700;
     font-size: xx-large;
@@ -54,10 +56,35 @@
     font-size: larger;
     font-weight: 400;
     color:rgb(19, 148, 191);
+    
   
 }
 
 .logoutbtn{
     font-size: larger;
     font-weight: 400;
+}
+
+.feed-component{
+    font-family: Poppins;
+    margin:30px;
+    padding: 3rem;
+    background-color: azure;
+    border: 1px solid aqua;
+    border-radius:20px;
+}
+
+.feed-component h2{
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.feed-component p{
+    line-height: 1.5rem;
+    font-size:18px;
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+.feed-component div{
+    text-transform: capitalize;
+    font-weight: 500;
 }
