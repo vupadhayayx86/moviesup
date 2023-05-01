@@ -20,7 +20,7 @@ const Home = ({jwtToken,setJwtToken}:Props) => {
   const [userFeedbacks,setUserfeedbacks]=useState([])
   useEffect(()=>{
     setJwtToken(cookies.jwtcookie)
-    console.log(cookies.jwtcookie)
+    
   if(jwtToken){
    axios.get("https://feedbackapp-5ehr.onrender.com/feedback/",{withCredentials:true,params:{username:useremail}})
    .then((response)=>setUserfeedbacks(response.data.allFeedbacks))

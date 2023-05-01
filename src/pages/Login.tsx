@@ -13,8 +13,8 @@ interface Inputs{
 const Login = () => {
     const {register,handleSubmit,formState:{errors},reset}=useForm<Inputs>()
     const navigate=useNavigate()
-    const [setUseremail]=useContext<any>(UserContext)
-    
+    const [useremail,setUseremail]=useContext<any>(UserContext)
+    console.log(useremail)
     const onSubmit=async (data:Inputs)=>{
         const {email,password}=data
         try{
