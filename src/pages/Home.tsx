@@ -15,11 +15,12 @@ interface ItemProps{
 }
 
 const Home = ({jwtToken,setJwtToken}:Props) => {
-  const [cookies, setCookie, removeCookie] = useCookies(['jwtcookie']);
-  const [useremail,setUseremail]=useContext<any>(UserContext)
+  const [cookies] = useCookies(['jwtcookie']);
+  const [useremail]=useContext<any>(UserContext)
   const [userFeedbacks,setUserfeedbacks]=useState([])
   useEffect(()=>{
     setJwtToken(cookies.jwtcookie)
+    console.log(cookies.jwtcookie)
   if(jwtToken){
    axios.get("https://feedbackapp-5ehr.onrender.com/feedback/",{withCredentials:true,params:{username:useremail}})
    .then((response)=>setUserfeedbacks(response.data.allFeedbacks))

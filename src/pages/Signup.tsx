@@ -15,7 +15,7 @@ const Signup = () => {
     const {register,handleSubmit,formState:{errors},reset}=useForm<Inputs>()
     
     const navigate=useNavigate()
-    const [useremail,setUseremail]=useContext<any>(UserContext)
+    const [setUseremail]=useContext<any>(UserContext)
     const onSubmit=async (data:Inputs)=>{
         const {email,password,confirmpass}=data
         const username=email.slice(0,email.indexOf("@"))

@@ -8,7 +8,7 @@ interface InputProps{
   feedback:String
 }
 const Feedback = () => {
-  const [useremail,setUseremail]=useContext<any>(UserContext)
+  const [useremail]=useContext<any>(UserContext)
   const {register,handleSubmit,formState:{errors},reset}=useForm<InputProps>()
   
   const onSubmit=async (data:InputProps)=>{
