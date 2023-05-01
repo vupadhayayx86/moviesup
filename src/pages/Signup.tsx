@@ -25,7 +25,7 @@ const Signup = () => {
             return
         }
         try{
-            const res=await fetch("http://localhost:5000/users",{
+            const res=await fetch("https://feedbackapp-5ehr.onrender.com/users",{
                 method: 'POST',
                 body: JSON.stringify({email,password,username}),
                 headers: {'Content-type' : 'application/json'},

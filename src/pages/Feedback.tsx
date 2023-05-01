@@ -1,7 +1,6 @@
 import { UserContext } from "../usercontext"
 import { useContext } from "react"
 import {useForm} from 'react-hook-form'
-import axios from 'axios'
 
 interface InputProps{
   username:String,
@@ -15,7 +14,7 @@ const Feedback = () => {
   const onSubmit=async (data:InputProps)=>{
     const {username,subject,feedback}=data
     try{
-     const res=fetch('http://localhost:5000/feedback',{
+     const res=fetch('https://feedbackapp-5ehr.onrender.com/feedback',{
       method:'POST',
       body:JSON.stringify({username,subject,feedback}),
       headers: {'Content-type' : 'application/json'},

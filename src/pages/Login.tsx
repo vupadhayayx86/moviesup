@@ -18,7 +18,7 @@ const Login = () => {
     const onSubmit=async (data:Inputs)=>{
         const {email,password}=data
         try{
-            const res=await fetch("http://localhost:5000/login",{
+            const res=await fetch("https://feedbackapp-5ehr.onrender.com/login",{
                 method: 'POST',
                 body: JSON.stringify({email,password}),
                 headers: {'Content-type' : 'application/json'},
@@ -26,6 +26,7 @@ const Login = () => {
             })
             const {useremail}=await res.json()
             setUseremail(useremail)
+            console.log(useremail)
         }
         catch(error){
             console.log(error)

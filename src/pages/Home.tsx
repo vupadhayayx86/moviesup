@@ -20,13 +20,12 @@ const Home = ({jwtToken,setJwtToken}:Props) => {
   const [userFeedbacks,setUserfeedbacks]=useState([])
   useEffect(()=>{
     setJwtToken(cookies.jwtcookie)
-    
   if(jwtToken){
-   axios.get("http://localhost:5000/feedback/",{withCredentials:true,params:{username:useremail}})
+   axios.get("https://feedbackapp-5ehr.onrender.com/feedback/",{withCredentials:true,params:{username:useremail}})
    .then((response)=>setUserfeedbacks(response.data.allFeedbacks))
    .catch((error)=>console.log(error))
   } else{
-    axios.get("http://localhost:5000/all",{withCredentials:true})
+    axios.get("https://feedbackapp-5ehr.onrender.com/all",{withCredentials:true})
     .then((response)=>setUserfeedbacks(response.data.allFeedbacks))
     .catch((error)=>console.log(error))
   }
