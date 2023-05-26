@@ -22,11 +22,11 @@ const Home = ({jwtToken,setJwtToken}:Props) => {
     setJwtToken(cookies.jwtcookie)
     
   if(jwtToken){
-   axios.get("https://feedbackapp-5ehr.onrender.com/feedback/",{withCredentials:true,params:{username:useremail}})
+   axios.get("https://helloazurenode.azurewebsites.net/feedback/",{withCredentials:true,params:{username:useremail}})
    .then((response)=>setUserfeedbacks(response.data.allFeedbacks))
    .catch((error)=>console.log(error))
   } else{
-    axios.get("https://feedbackapp-5ehr.onrender.com/all",{withCredentials:true})
+    axios.get("https://helloazurenode.azurewebsites.net/all",{withCredentials:true})
     .then((response)=>setUserfeedbacks(response.data.allFeedbacks))
     .catch((error)=>console.log(error))
   }

@@ -26,7 +26,7 @@ const Signup = () => {
         }
         console.log(useremail)
         try{
-            const res=await fetch("https://feedbackapp-5ehr.onrender.com/users",{
+            const res=await fetch("https://helloazurenode.azurewebsites.net/users",{
                 method: 'POST',
                 body: JSON.stringify({email,password,username}),
                 headers: {'Content-type' : 'application/json'},

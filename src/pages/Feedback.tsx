@@ -14,7 +14,7 @@ const Feedback = () => {
   const onSubmit=async (data:InputProps)=>{
     const {username,subject,feedback}=data
     try{
-     const res=fetch('https://feedbackapp-5ehr.onrender.com/feedback',{
+     const res=fetch('https://helloazurenode.azurewebsites.net/feedback',{
       method:'POST',
       body:JSON.stringify({username,subject,feedback}),
       headers: {'Content-type' : 'application/json'},

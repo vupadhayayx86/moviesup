@@ -18,7 +18,7 @@ const Login = () => {
     const onSubmit=async (data:Inputs)=>{
         const {email,password}=data
         try{
-            const res=await fetch("https://feedbackapp-5ehr.onrender.com/login",{
+            const res=await fetch("https://helloazurenode.azurewebsites.net/login",{
                 method: 'POST',
                 body: JSON.stringify({email,password}),
                 headers: {'Content-type' : 'application/json'},
